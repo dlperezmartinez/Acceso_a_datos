@@ -19,7 +19,7 @@ public class Principal {
         FileManager fileManager = new FileManager();
 
         List<List<String>> records = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File("/home/nocend/IdeaProjects/Acceso_a_datos/src/Tema3/ManejoDeFicheros/dos/Restaurants.csv"));) {
+        try (Scanner scanner = new Scanner(new File("C:\\Users\\Nocen\\IdeaProjects\\Acceso_a_datos\\src\\Tema3\\ManejoDeFicheros\\dos\\Restaurants.csv"));) {
             while (scanner.hasNextLine()) {
                 records.add(getRecordFromLine(scanner.nextLine()));
             }
@@ -28,10 +28,10 @@ public class Principal {
         }
 
         for (List<String> n : records){
-            //System.out.println(n.get(1));
+            System.out.println(n);
 
-            if (n.get(1).matches("^1*")) {
-                System.out.println(n.get(1));
+            if (n.get(4).matches("^Z*")) {
+                System.out.println(n);
             }
 
             for (String i : n) {
