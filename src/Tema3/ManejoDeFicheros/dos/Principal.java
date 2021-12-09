@@ -2,17 +2,11 @@ package Tema3.ManejoDeFicheros.dos;
 
 import Tema3.ManejoDeFicheros.uno.FileManager;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
 
 public class Principal {
     public static void main(String[] args) {
@@ -28,16 +22,8 @@ public class Principal {
         }
 
         for (List<String> n : records){
-            System.out.println(n);
-
-            if (n.get(4).matches("^Z*")) {
+            if (n.get(4).matches("^6.*")) {
                 System.out.println(n);
-            }
-
-            for (String i : n) {
-                if (i.matches("^*")) {
-                    System.out.println(n);
-                }
             }
         }
     }
