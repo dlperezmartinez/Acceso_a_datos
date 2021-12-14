@@ -1,0 +1,1 @@
+A partir del csv creado en el ejercicio anterior, crea un programa en Java que lea este fichero y cree un nuevo fichero .csv con sólo aquellas frutas que están en temporada. 

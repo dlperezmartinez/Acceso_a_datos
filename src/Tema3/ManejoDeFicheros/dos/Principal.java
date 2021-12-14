@@ -10,10 +10,8 @@ import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
-        FileManager fileManager = new FileManager();
-
         List<List<String>> records = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File("C:\\Users\\Nocen\\IdeaProjects\\Acceso_a_datos\\src\\Tema3\\ManejoDeFicheros\\dos\\Restaurants.csv"));) {
+        try (Scanner scanner = new Scanner(new File("/home/nocend/IdeaProjects/Acceso_a_datos/src/Tema3/ManejoDeFicheros/dos/Restaurants.csv"));) {
             while (scanner.hasNextLine()) {
                 records.add(getRecordFromLine(scanner.nextLine()));
             }
