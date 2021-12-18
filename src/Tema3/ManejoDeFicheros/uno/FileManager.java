@@ -1,9 +1,7 @@
 package Tema3.ManejoDeFicheros.uno;
 
 import java.io.File;
-import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 
 public class FileManager {
     private File ruta;

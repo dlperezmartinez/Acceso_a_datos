@@ -17,7 +17,7 @@ public class Principal {
         try {
             fm.comprobarFichero(ruta = in.next());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }

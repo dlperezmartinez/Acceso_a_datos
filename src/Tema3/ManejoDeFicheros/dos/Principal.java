@@ -1,7 +1,5 @@
 package Tema3.ManejoDeFicheros.dos;
 
-import Tema3.ManejoDeFicheros.uno.FileManager;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -11,7 +9,7 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         List<List<String>> records = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File("/home/nocend/IdeaProjects/Acceso_a_datos/src/Tema3/ManejoDeFicheros/dos/Restaurants.csv"));) {
+        try (Scanner scanner = new Scanner(new File("C:\\Users\\Nocen\\IdeaProjects\\Acceso_a_datos\\src\\Tema3\\ManejoDeFicheros\\dos\\Restaurants.csv"));) {
             while (scanner.hasNextLine()) {
                 records.add(getRecordFromLine(scanner.nextLine()));
             }
@@ -29,7 +27,7 @@ public class Principal {
     private static List<String> getRecordFromLine(String line) {
         List<String> values = new ArrayList<String>();
         try (Scanner rowScanner = new Scanner(line)) {
-            rowScanner.useDelimiter(",");
+            rowScanner.useDelimiter(",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)");
             while (rowScanner.hasNext()) {
                 values.add(rowScanner.next());
             }
