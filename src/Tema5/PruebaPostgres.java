@@ -8,7 +8,23 @@ public class PruebaPostgres {
     public static void main(String[] args) throws SQLException {
         establecerConexion();
 
-
+        crearSentencia(
+            "create domain dom_dni as text check ( value ~ '^[0-9]{8}[A-Z]$');" +
+                "CREATE TABLE Bonos ( " +
+                    "ID_bono dom_id," +
+                    "Tipo varchar(20)," +
+                    "Duracion smallint);" +
+                "" +
+                "CREATE TABLE Usuario (" +
+                    "DNI dom_dni," +
+                    "Nombre varchar(20)," +
+                    "F_nacimiento Date," +
+                    "Ciudad varchar(15));" +
+                "CREATE TABLE Bonos_Activos (" +
+                    "ID_bono dom_id," +
+                    "DNI_usuario dom_dni," +
+                    "ID_linea dom_id," +
+                    "Caducidad Date);");
 
         cerrarConexion();
     }
@@ -29,7 +45,7 @@ public class PruebaPostgres {
         conexion.close();
     }
 
-    static void crearTabla(String sql) throws SQLException {
+    static void crearSentencia(String sql) throws SQLException {
         Statement statement = conexion.createStatement();
         statement.execute(sql);
     }
